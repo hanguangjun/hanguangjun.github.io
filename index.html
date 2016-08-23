@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{
+		margin:0;padding:0;list-style: none;
+	}
+	#wrap{
+		width: 100%;
+		position:relative;
+		height:100%;
+		border:1px red solid;
+		/*作为list 和 bg 的父级 这里没有高度*/
+	}
+	#list{
+		position:relative;
+	}
+	#list ul{
+		width: 20%;
+		border:5px solid white;
+		box-sizing:border-box;
+		position:relative;
+		float:left;
+	}
+	#list li{
+		position:relative;
+		margin:5px 0;
+		width: 100%;
+
+
+	}
+	#list li img{
+		width: 100%;
+		height: 100%;
+		position:relative;
+		/*相对定位*/
+	}
+	#wrap li .nb{
+		position:absolute;
+		top:0;left:0;
+		width: 100%;
+		height: 100%;
+		background:black;
+		opacity: 0.6;
+		display:none;
+	}
+	#bg{
+		width: 100%;
+		height: 100%;
+		background:rgba(0,0,0,.5);
+
+		display:none;
+		position:fixed;
+		/*因为父级没有高度,所以固定定位*/
+			/*指向可视桌面*/
+		top:0;left:0;
+		z-index: 2;
+	}
+
+
+	</style>
+
+</head>
+<body>
+	<div id="wrap">
+		<div id="list">
+			<ul></ul>
+			<ul></ul>
+			<ul></ul>
+			<ul></ul>
+			<ul></ul>
+		</div>
+	</div>
+	<div id="bg"></div>
+</body>
+	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+	<script>
+	function creatLi(num){
+		for(var i=1;i<num;i++){
+			var newLi=$('<li><img src="img/rd'+i+'.jpg" alt="" /><div class="nb"></div></li>');
+			var listHeight=[];
+			$('ul').each(function(){
+				listHeight.push($(this).height());
+			});
+
+			var minHeight=listHeight[0];
+			var minindex=0;
+			for(var j=0;j<listHeight.length;j++){
+				if(minHeight>listHeight[j]){
+					minHeight=listHeight[j];
+					minindex=j;
+				}
+			  $('ul').eq(minindex).append(newLi);
+			}
+		}
+	}
+		creatLi(28);
+		$('#list li img').mouseover(function(){
+			$(this).siblings().show().mouseout(function(){
+				$(this).hide();
+			})
+		})
+		$('.nb').click(function(){
+			var ow=$(this).siblings().clone().css({
+				width:40+'%',
+				height:40+'%',
+				border:'5px white solid',
+				position:'fixed',
+				top:25+'%',
+				left:25+'%',
+			});
+			$('#bg').append(ow).show().click(function(){
+				ow.remove();
+				$(this).hide();
+			})
+
+
+		})
+	</script>
+</html>
