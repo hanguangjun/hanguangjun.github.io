@@ -4,119 +4,125 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<style type="text/css">
-	*{
-		margin:0;padding:0;list-style: none;
-	}
-	#wrap{
-		width: 100%;
-		position:relative;
-		height:100%;
-		border:1px red solid;
-		/*作为list 和 bg 的父级 这里没有高度*/
-	}
-	#list{
-		position:relative;
-	}
-	#list ul{
-		width: 20%;
-		border:5px solid white;
-		box-sizing:border-box;
-		position:relative;
-		float:left;
-	}
-	#list li{
-		position:relative;
-		margin:5px 0;
-		width: 100%;
-
-
-	}
-	#list li img{
-		width: 100%;
-		height: 100%;
-		position:relative;
-		/*相对定位*/
-	}
-	#wrap li .nb{
-		position:absolute;
-		top:0;left:0;
-		width: 100%;
-		height: 100%;
-		background:black;
-		opacity: 0.6;
-		display:none;
-	}
-	#bg{
-		width: 100%;
-		height: 100%;
-		background:rgba(0,0,0,.5);
-
-		display:none;
-		position:fixed;
-		/*因为父级没有高度,所以固定定位*/
-			/*指向可视桌面*/
-		top:0;left:0;
-		z-index: 2;
-	}
-
+	body{margin:0;padding:0;background:#fff;font-size:14px;font-family:Arial,Helvetica,'STHeiti','Microsoft YaHei','sans-serif'}
+	form,ul,li,p,h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
+	img{border:0;}
+	ul,li{list-style-type:none;}
+	a{color:#00007F;text-decoration:none;}
+	a:hover{text-decoration:none;}
+	#wrap{width: 400px;height: 500px;border:1px solid red;
+		position:relative;margin:auto;}
+	#time{float:left;}
+	#score{float:right;}
+	#main{clear:both;font-size:180px;text-align: center;line-height:400px;}
+	#tips{text-align: center;margin:10px;}
+	#list{width: 100%;}
+	#list li{float:left;width: 20%;font-size:30px;text-align:center;}
 
 	</style>
-
 </head>
 <body>
 	<div id="wrap">
-		<div id="list">
-			<ul></ul>
-			<ul></ul>
-			<ul></ul>
-			<ul></ul>
-			<ul></ul>
-		</div>
+		<div id="time">剩余时间:30</div>
+		<div id="score">完成:0</div>
+		<div id="main">黄</div>
+		<div id="tips">根据上面的颜色,选择下面正确的文字</div>
+		<ul id="list">
+			<li>红</li>
+			<li>黄</li>
+			<li>蓝</li>
+			<li>绿</li>
+			<li>黑</li>
+		</ul>
 	</div>
-	<div id="bg"></div>
-</body>
-	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
 	<script>
-	function creatLi(num){
-		for(var i=1;i<num;i++){
-			var newLi=$('<li><img src="img/rd'+i+'.jpg" alt="" /><div class="nb"></div></li>');
-			var listHeight=[];
-			$('ul').each(function(){
-				listHeight.push($(this).height());
-			});
+	var wrap=document.getElementById('wrap');
+	var oTime=document.getElementById('time');
+	var oScore=document.getElementById('score');
+	var oMain=document.getElementById('main');
+	var oList=document.getElementById('list');
+	var fonts=['红','黄','蓝','绿','黑'];
+	var colors=['red','yellow','blue','green','black'];
 
-			var minHeight=listHeight[0];
-			var minindex=0;
-			for(var j=0;j<listHeight.length;j++){
-				if(minHeight>listHeight[j]){
-					minHeight=listHeight[j];
-					minindex=j;
-				}
-			  $('ul').eq(minindex).append(newLi);
-			}
+	//全局变量
+	var realtext="";
+	//大字
+	function creatBig(){
+		//获取fonts中一个随机字
+		var font=fonts[Math.floor(Math.random()*5)];
+		//console.log(font);
+		//把获取的随机字写入oMain
+		oMain.innerHTML=font;
+		//获取颜色
+		cRand=Math.floor(Math.random()*5);
+		color=colors[cRand];
+		//将颜色写入oMain;
+		oMain.style.color=color;
+
+		realtext=fonts[cRand];
+
+
+	}
+
+		creatBig();
+
+	//小字
+	function creatSmall(){
+		nfonts=fonts.slice(0);
+		ncolors=colors.slice(0);
+		nfonts.sort(function(){
+			return Math.random()-0.5;
+		})
+		//console.log(nfonts);
+		ncolors.sort(function(){
+			return Math.random()-0.5;
+		})
+		for(var i=0;i<nfonts.length;i++){
+			nfont=nfonts[i];
+			//console.log(nfont);数组
+			ncolor=ncolors[i];
+			oList.children[i].innerHTML=nfont;
+			oList.children[i].style.color=ncolor;
 		}
 	}
-		creatLi(28);
-		$('#list li img').mouseover(function(){
-			$(this).siblings().show().mouseout(function(){
-				$(this).hide();
-			})
-		})
-		$('.nb').click(function(){
-			var ow=$(this).siblings().clone().css({
-				width:40+'%',
-				height:40+'%',
-				border:'5px white solid',
-				position:'fixed',
-				top:25+'%',
-				left:25+'%',
-			});
-			$('#bg').append(ow).show().click(function(){
-				ow.remove();
-				$(this).hide();
-			})
+		creatSmall();
+
+	var score=0;
+	var bool=false;
+	var isClick=true;
+
+	for(var i=0;i<oList.children.length;i++){
+		oList.children[i].onclick=function(){
+		  if(isClick){
+			if(this.innerHTML==realtext){
+				creatBig();
+				creatSmall();
+				score++;
+				oScore.innerHTML="完成:"+score;
+				bool=true;
+			}
+		  }
+		}
+	}
 
 
-		})
+	var time=30;
+	var timer=setInterval(function(){
+		if(bool){
+			time--;
+			if(time==0){
+				clearInterval(timer);
+				isClick=false;
+			}
+			oTime.innerHTML="剩余时间:"+time;
+		}
+	},1000);
+
+
+
+
+
+
 	</script>
+</body>
 </html>
