@@ -1,0 +1,20 @@
+
+
+#con{
+		background:#ccc url("../img/world_map.png") no-repeat;
+
+	}
+#cont1{
+		width: 100%;
+		padding-left:20px;
+
+	}
+#_bg{
+		width: 100%;
+		height: 100%;
+		background:black;
+		margin:0 auto;
+	}
+#_bg p{
+		display:none;
+	}

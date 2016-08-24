@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bim</title>
+	<style type="text/css">
+	body{margin:0;padding:0;background:#fff;font-size:14px;font-family:Arial,Helvetica,'STHeiti','Microsoft YaHei','sans-serif'}
+	form,ul,li,p,h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
+	img{border:0;}
+	ul,li{list-style-type:none;}
+	a{color:#00007F;text-decoration:none;}
+	a:hover{text-decoration:none;}
+	#wrap{
+		width: 100%;
+		position:relative;
+	}
+	#_nav{
+		width: 100%;
+		height: 68px;
+		background:black;
+	}
+	#_bg{
+		width: 1150px;
+		height: 100%;
+		background:black;
+		margin:0 auto;
+	}
+	#logo{
+
+	}
+	#logo img{
+		margin-top:20px;
+	}
+	#_bg p{
+		float:right;
+		margin-top:-20px;
+	}
+	#_bg p a{
+		margin-right:50px;
+		color:white;
+		font-size: 18px;
+	}
+	#_bg p a:hover{
+		border:1px white solid;
+		border-radius: 5px;
+	}
+	#con{
+		width: 100%;
+		position:relative;
+	}
+	#con .con1{
+		width: 100%;
+		height: 590px;
+		position:relative;
+
+	}
+	#con .con1:nth-child(1){
+		background:#ccc;
+	}
+	#con .con1:nth-child(2){
+		background:white;
+	}
+	#con .con1:nth-child(3){
+		background:#ccc;
+	}
+
+	/*左边大div*/
+	#con .con1 .con11{
+		position:absolute;
+		left: 0;
+		/*background:pink;*/
+		width: 400px;
+		height: 390px;
+		padding:100px 200px;
+
+	}
+
+	#con .con1 .con11 p{
+		margin:20px 0;
+	}
+	#con .con1 .con11 img{
+		width: 130px;
+		float:left;
+	}
+	#con .con1:nth-child(2) .con11 img{
+		width: 190px;
+		margin-right:10px;
+	}
+	#con .con1 span{
+		border:1px solid black;
+		padding:3px;
+		border-radius:2px;
+	}
+	/*右边大div*/
+	#con .con1 .con12{
+		position:absolute;
+		left:650px;
+		/*background:blue;*/
+		width: 550px;
+		height:590px;
+		float:left;
+
+	}
+	#con .con1:nth-child(1) .con12 img{
+		position:absolute;
+		right:60px;
+		bottom:0;
+		width: 300px;
+	}
+	#con .con1:nth-child(2) .con12 img{
+		position:absolute;
+		right:100px;
+		width: 300px;
+	}
+
+	/*第三个*/
+	#con .con1:nth-child(3) .con11{
+		position:absolute;
+		left:400px;
+		/*background:pink;*/
+		width: 400px;
+		height: 390px;
+		padding:100px 200px;
+
+	}
+	#con .con1:nth-child(3) .con11 img{
+		width: 190px;
+		margin-right:10px;
+	}
+	#con .con1:nth-child(3) .con12 img{
+		position:absolute;
+		right:100px;
+		bottom:0;
+		width: 300px;
+	}
+	#con .con1:nth-child(3) .con12{
+		position:absolute;
+		left:0;
+		/*background:blue;*/
+		width: 550px;
+		height:590px;
+		float:left;
+	}
+	/*第四张*/
+	#con .con1:nth-child(4) .con11{
+		position:absolute;
+		left: 100px;
+		/*background:pink;*/
+		width: 400px;
+		height: 390px;
+		padding:100px 200px;
+
+	}
+	#con .con1:nth-child(4) .con11 img{
+		width: 210px;
+		margin-top:20px;
+	}
+	#con .con1:nth-child(4) .con12 img{
+		position:absolute;
+		right:58px;
+		bottom:0;
+		width: 300px;
+	}
+	#con13 img{
+		position:absolute;
+		left:150px;
+		top:0;
+		width: 300px;
+		opacity: 0.5;
+	}
+	/*第五张*/
+	#con .con1:nth-child(5){
+		background:#ccc;
+	}
+	#con .con1:nth-child(5) .con12 img{
+		position:absolute;
+		right:100px;
+		width: 300px;
+	}
+	#foot{
+		width: 250px;
+		height: 100px;
+
+		margin:30px auto;
+	}
+	#foot1{
+		width: 30px;
+		margin:5px auto;
+	}
+	#foot2{
+		width: 120px;
+		margin:5px auto;
+	}
+	#foot a img:nth-child(2){
+		display:none;
+	}
+	</style>
+	<link rel="stylesheet" href="css/Bim.css" media="screen and (max-width:900px)">
+	<link rel="stylesheet" href="css/swiper.min.css">
+</head>
+<body>
+	<div id="wrap">
+		<nav id="_nav">
+			<div id="_bg">
+				<div id="logo">
+					<img src="img/7.png" alt="">
+				</div>
+				<p>
+					<a href="index1.html">Home</a>
+					<a href="About.html">About</a>
+					<a href="Rendering.html">Rendering</a>
+					<a href="3D Animation.html">3D Animation</a>
+					<a href="Bim.html"style="border:1px white solid;
+		             border-radius: 5px;">Bin</a>
+					<a href="Contact.html">Contact</a>
+				</p>
+			</div>
+		</nav>
+		<!-- 内容部分 -->
+		<div id="con">
+			<div class="con1">
+				<div class="con11">
+					<div class="con111">
+						<h3><span class="pa">1</span>&nbspMODEL COMPLETION</h3>
+						<p>Establishing and creating the visible and multidimentsion Architecture,Structural and MEP</p>
+					</div>
+					<div class="con112">
+						<img src="img/BIM-p1-1.png" alt="">
+						<img src="img/BIM-p1-2.png" alt="">
+						<img src="img/BIM-p1-3.png" alt="">
+					</div>
+
+				</div>
+				<div class="con12">
+					<img src="img/BIM-building1.png" alt="">
+				</div>
+			</div>
+			<div class="con1">
+				<div class="con11">
+					<div class="con111">
+						<h3><span class="pa">2</span>&nbspCLASH DEECTION</h3>
+						<p>Completing the clash detection among various design parties, and engineers and even different prganisations in con struction drawings.</p>
+					</div>
+					<div class="con112">
+						<img src="img/BIM-p2-1.jpg" alt="">
+						<img src="img/BIM-p2-2.jpg" alt="">
+
+					</div>
+
+				</div>
+				<div class="con12">
+					<img src="img/BIM-building1-half.png" alt="">
+				</div>
+			</div>
+			<!-- 第三张 -->
+			<div class="con1">
+				<div class="con11">
+					<div class="con111">
+						<h3><span class="pa">3</span>&nbspCLASH DEECTION</h3>
+						<p>Completing the clash detection among various design parties, and engineers and even different prganisations in con struction drawings.</p>
+					</div>
+					<div class="con112">
+						<img src="img/BIM-p2-1.jpg" alt="">
+						<img src="img/BIM-p2-2.jpg" alt="">
+
+					</div>
+
+				</div>
+				<div class="con12">
+					<img src="img/building2-half-t.png" alt="">
+				</div>
+			</div>
+			<!-- 第四张 -->
+			<div class="con1">
+				<div class="con11">
+					<div class="con111">
+						<h3><span class="pa">4</span>&nbspMODEL COMPLETION</h3>
+						<p>Establishing and creating the visible and multidimentsion Architecture,Structural and MEP</p>
+					</div>
+					<div class="con112">
+						<img src="img/BIm-p4-1.jpg" alt="">
+						<img src="img/BIM-p4-2.jpg" alt="">
+
+					</div>
+
+				</div>
+				<div class="con12">
+					<img src="img/building3-half-t.png" alt="">
+				</div>
+				<div id="con13">
+					<img src="img/BIM-building2-half.png" alt="">
+				</div>
+			</div>
+			<!-- 第五张 -->
+			<div class="con1">
+				<div class="con11">
+					<div class="con111">
+						<h3><span class="pa">5</span>&nbspCLASH DEECTION</h3>
+						<p>Completing the clash detection among various design parties, and engineers and even different prganisations in con struction drawings.</p>
+					</div>
+
+				</div>
+				<div class="con12">
+					<img src="img/building3-half-b.png" alt="">
+				</div>
+			</div>
+
+		</div>
+		<footer>
+			<div id="foot">
+				<div id="foot1">
+					<a href="">
+						<img src="img/001.jpg" alt="">
+						<img src="img/010.jpg" alt="">
+					</a>
+				</div>
+				<div id="foot2">
+					<a href="">
+						<img src="img/002.jpg" alt="">
+						<img src="img/020.jpg" alt="">
+					</a>
+					<a href="">
+						<img src="img/003.jpg" alt="">
+						<img src="img/030.jpg" alt="">
+					</a>
+					<a href="">
+						<img src="img/004.jpg" alt="">
+						<img src="img/040.jpg" alt="">
+					</a>
+					<a href="">
+						<img src="img/005.jpg" alt="">
+						<img src="img/050.jpg" alt="">
+					</a>
+				</div>
+				<p>Copyright@ 1998-2015 shining Group</p>
+			</div>
+		</footer>
+	</div>
+</body>
+	<script type="text/javascript"src="js/jquery-3.0.0.min.js"></script>
+	<script src="js/mouseWheel.js"></script>
+	<script>
+	// window.onscroll=function(){
+	// 	t1=document.body.scrollTop||document.documentElement.scrollTop;
+
+	// 	mouseWheel(t1,function(event,down){
+	// 		if(down){
+	// 			t1+=588+'px'
+	// 		}else{
+	// 			t1-=588+'px'
+	// 		}
+	// 	});
+
+	//  }
+
+		$('#foot a img').hover(function(){
+		$(this).toggle().siblings().toggle();
+		})
+	</script>
+</html>

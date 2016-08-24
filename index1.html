@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	body{margin:0;padding:0;background:#fff;font-size:14px;font-family:Arial,Helvetica,'STHeiti','Microsoft YaHei','sans-serif'}
+	form,ul,li,p,h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
+	img{border:0;}
+	ul,li{list-style-type:none;}
+	a{color:#00007F;text-decoration:none;}
+	a:hover{text-decoration:none;}
+	#wrap{
+		width: 100%;
+		position:relative;
+	}
+	#_nav{
+		width: 100%;
+		height: 68px;
+		background:black;
+	}
+	#_bg{
+		width: 1150px;
+		height: 100%;
+		background:black;
+		margin:0 auto;
+	}
+	#logo{
+
+	}
+	#logo img{
+		margin-top:20px;
+	}
+	#_bg p{
+		float:right;
+		margin-top:-20px;
+	}
+	#_bg p a{
+		margin-right:50px;
+		color:white;
+		font-size: 18px;
+	}
+	#_bg p a:hover{
+		border:1px white solid;
+		border-radius: 5px;
+	}
+	/*内容*/
+	#co{
+		width: 100%;
+	}
+	#con{
+		width: 990px;
+		margin:0 auto;
+		position:relative;
+
+	}
+	#con .conta{
+		width: 100%;
+		height: 180px;
+		border-bottom:1px solid black;
+
+
+	}
+	/*#con .conta:nth-child(1){
+		background:url("img/1.png") no-repeat;
+		background-size: 588px 180px;
+
+	}*/
+	#con .conta img{
+		width: 588px;
+		height: 180px;
+		float:left;
+		/*cursor: pointer;*/
+		display:none;
+	}
+	/*获取.conta中的第一个img*/
+	#con .conta img:nth-child(1){
+		display:block;
+	}
+
+	/*#con .conta img:nth-child(3){
+		display:block;
+	}*/
+	/*#con .conta img:nth-child(5){
+		display:block;
+	}*/
+	#con li{
+		width: 20px;
+		height: 180px;
+		background:#ccc;
+		float:left;
+
+	}
+	.div1{
+		width: 340px;
+		height: 150px;
+		padding-left: 20px;
+		padding-top:30px;
+		padding-right:20px;
+		line-height:30px;
+		float:left;
+	}
+
+	#foot{
+		width: 250px;
+		height: 100px;
+
+		margin:30px auto;
+	}
+	#foot1{
+		width: 30px;
+		margin:5px auto;
+	}
+	#foot2{
+		width: 120px;
+		margin:5px auto;
+	}
+	#foot a img:nth-child(2){
+		display:none;
+	}
+	</style>
+	<link rel="stylesheet" href="css/home(完整网页).css" media="screen and (max-width: 800px)">
+</head>
+<body>
+	<div id="wrap">
+		<!-- 导航条 -->
+		<nav id="_nav">
+			<div id="_bg">
+				<div id="logo">
+					<img src="img/7.png" alt="">
+				</div>
+				<p>
+					<a href="index1.html"style="border:1px white solid;
+		             border-radius: 5px;">Home</a>
+					<a href="about.html">About</a>
+					<a href="Rendering.html">Rendering</a>
+					<a href="3D Animation.html">3D Animation</a>
+					<a href="Bim.html">Bim</a>
+					<a href="Contact.html">Contact</a>
+				</p>
+			</div>
+		</nav>
+		<!-- 内容 -->
+		<div id="co">
+			<div id="con">
+				<div class="conta">
+					<a href="">
+						<img src="img/1.png" alt="">
+						<img src="img/2.png" alt="">
+					</a>
+					<li></li>
+					<div class='div1'>
+						<a href="">
+							<h3>RENDERINGS</h3>
+							<p>Masterplan、Public Building、commercial Building、Residential Building、Landscape Design</p>
+						</a>
+					</div>
+
+				</div>
+				<div class="conta">
+					<div class="div1">
+						<a href="###"style="text-align:right">
+							<h3 >BIM</h3>
+							<p>Model Completion、Clash Detection、MEP Integration、Curtain Wall Remedying、BIM Consulting</p>
+						</a>
+					</div>
+					<li></li>
+					<a href="">
+						<img src="img/3.jpg" alt="">
+						<img src="img/4.png" alt="">
+					</a>
+				</div>
+				<div class="conta">
+					<a href="">
+						<img src="img/5.jpg" alt="">
+						<img src="img/6.jpg" alt="">
+					</a>
+					<li></li>
+					<div class='div1'>
+						<a href="">
+							<h3>RENDERINGS</h3>
+							<p>Masterplan、Public Building、commercial Building、Residential Building、Landscape Design</p>
+						</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div id="foot">
+				<div id="foot1">
+					<a href="">
+						<img src="img/001.jpg" alt="">
+						<img src="img/010.jpg" alt="">
+					</a>
+				</div>
+				<div id="foot2">
+					<a href="">
+						<img src="img/002.jpg" alt="">
+						<img src="img/020.jpg" alt="">
+					</a>
+					<a href="">
+						<img src="img/003.jpg" alt="">
+						<img src="img/030.jpg" alt="">
+					</a>
+					<a href="">
+						<img src="img/004.jpg" alt="">
+						<img src="img/040.jpg" alt="">
+					</a>
+					<a href="">
+						<img src="img/005.jpg" alt="">
+						<img src="img/050.jpg" alt="">
+					</a>
+				</div>
+				<p>Copyright@ 1998-2015 shining Group</p>
+			</div>
+		</footer>
+	</div>
+</body>
+	<script src="js/jquery-3.0.0.min.js"></script>
+	<script>
+//li小条的颜色改变
+	$('.conta').mouseover(function(){
+		$(this).find('li').css({background:'green'})
+	}).mouseout(function(){
+		$(this).find('li').css({background:'#ccc'})
+	})
+//图片显示
+	$('.conta img').hover(function(){
+		$(this).toggle().siblings().toggle();
+
+	})
+//下边小图标
+
+		$('#foot a img').hover(function(){
+			$(this).toggle().siblings().toggle();
+		})
+
+
+	</script>
+</html>

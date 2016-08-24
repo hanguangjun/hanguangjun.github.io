@@ -1,0 +1,161 @@
+
+	/*max-width:900px*/
+	#wrap{
+		width: 100%;
+		position:relative;
+	}
+	#_nav{
+		width: 100%;
+		height: 68px;
+		background:black;
+	}
+	#_bg{
+		width: 700px;
+		height: 100%;
+		background:black;
+		margin:0 auto;
+	}
+
+	#_bg p a{
+		margin-right:10px;
+		color:white;
+		font-size: 14px;
+	}
+	#_bg p a:hover{
+		border:1px white solid;
+		border-radius: 3px;
+	}
+	#con{
+		width: 100%;
+		position:relative;
+	}
+	#con .con1{
+		width: 100%;
+		height: 450px;
+		position:relative;
+
+	}
+	#con .con1:nth-child(1){
+		background:#ccc;
+	}
+	#con .con1:nth-child(2){
+		background:white;
+	}
+	#con .con1:nth-child(3){
+		background:#ccc;
+	}
+
+	/*左边大div*/
+	#con .con1 .con11{
+		position:absolute;
+		left: 0;
+		/*background:pink;*/
+		width: 300px;
+		height: 290px;
+		padding:50px 100px;
+
+	}
+
+	#con .con1 .con11 p{
+		margin:20px 0;
+	}
+	#con .con1 .con11 img{
+		width: 90px;
+		float:left;
+	}
+	#con .con1:nth-child(2) .con11 img{
+		width: 140px;
+		margin-right:10px;
+	}
+	#con .con1 span{
+		border:1px solid black;
+		padding:3px;
+		border-radius:2px;
+	}
+	/*右边大div*/
+	#con .con1 .con12{
+		position:absolute;
+		left:350px;
+		background:rgba(0,0,0,0);
+		width: 550px;
+		height:450px;
+		float:left;
+
+	}
+	#con .con1:nth-child(1) .con12 img{
+		position:absolute;
+		right:60px;
+		bottom:0;
+		width: 300px;
+	}
+	#con .con1:nth-child(2) .con12 img{
+		position:absolute;
+		right:100px;
+		width: 300px;
+	}
+
+	/*第三个*/
+	#con .con1:nth-child(3) .con11{
+		position:absolute;
+		left:300px;
+		/*background:pink;*/
+		width: 300px;
+		height: 390px;
+		padding:100px 0px 100px 200px;
+
+	}
+	#con .con1:nth-child(3) .con11 img{
+		width: 160px;
+		margin-top: 20px;
+
+	}
+	#con .con1:nth-child(3) .con12 img{
+		position:absolute;
+		right:200px;
+		bottom:0;
+		width: 300px;
+	}
+	#con .con1:nth-child(3) .con12{
+		position:absolute;
+		left:0;
+		/*background:blue;*/
+		width: 550px;
+		height:450px;
+		float:left;
+	}
+	/*第四张*/
+	#con .con1:nth-child(4) .con11{
+		position:absolute;
+		left: 50px;
+		/*background:pink;*/
+		width: 350px;
+		height: 390px;
+		padding:100px 200px;
+
+	}
+	#con .con1:nth-child(4) .con11 img{
+		width: 210px;
+		margin-top:20px;
+	}
+	#con .con1:nth-child(4) .con12 img{
+		position:absolute;
+		right:58px;
+		bottom:0;
+		width: 300px;
+	}
+	#con13 img{
+		position:absolute;
+		left:50px;
+		top:0;
+		width: 300px;
+		opacity: 0.5;
+	}
+	/*第五张*/
+	#con .con1:nth-child(5){
+		background:#ccc;
+	}
+	#con .con1:nth-child(5) .con12 img{
+		position:absolute;
+		right:100px;
+		width: 300px;
+	}

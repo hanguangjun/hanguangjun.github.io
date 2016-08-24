@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	body{margin:0;padding:0;background:#fff;font-size:14px;font-family:Arial,Helvetica,'STHeiti','Microsoft YaHei','sans-serif'}
+	form,ul,li,p,h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
+	img{border:0;}
+	ul,li{list-style-type:none;}
+	a{color:#00007F;text-decoration:none;}
+	a:hover{text-decoration:none;}
+	#wrap{
+		width: 100%;
+		position:relative;
+	}
+	#_nav{
+		width: 100%;
+		height: 68px;
+		background:black;
+	}
+	#_bg{
+		width: 1150px;
+		height: 100%;
+		background:black;
+		margin:0 auto;
+	}
+	#logo{
+
+	}
+	#logo img{
+		margin-top:20px;
+	}
+	#_bg p{
+		float:right;
+		margin-top:-20px;
+	}
+	#_bg p a{
+		margin-right:50px;
+		color:white;
+		font-size: 18px;
+	}
+	#_bg p a:hover{
+		border:1px white solid;
+		border-radius: 5px;
+	}
+	.con{
+		width:100%;
+
+	}
+	.con img{
+		width: 100%;
+	}
+	#cont{
+		width: 100%;
+		margin-top:20px;
+		position:relative;
+	}
+	#cont ul{
+		width: 25%;
+		float:left;
+		border:5px solid white;
+		box-sizing:border-box;
+		position:relative;
+	}
+	#cont ul li{
+		width: 100%;
+		position:relative;
+		margin:5px 0;
+	}
+	#cont ul li img{
+		width: 100%;
+
+	}
+	#cont ul .nb{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background:rgba(0,0,0,0.5);
+		display:none;
+	}
+	#cont ul .nb img{
+		position:absolute;
+		top:45%;left:45%;
+		width: 10%;
+
+	}
+	#bg{
+		position:fixed;
+		top: 0;left: 0;
+		z-index: 2;
+		width: 100%;
+		height:100%;
+		background:rgba(0,0,0,.5);
+		display:none;
+	}
+
+
+	#foot{
+		width: 250px;
+		height: 100px;
+
+		margin:30px auto;
+	}
+	#foot1{
+		width: 30px;
+		margin:5px auto;
+	}
+	#foot2{
+		width: 120px;
+		margin:5px auto;
+	}
+	#foot a img:nth-child(2){
+		display:none;
+	}
+	</style>
+	<link rel="stylesheet" href="css/swiper.min.css">
+</head>
+<body>
+	<div id="wrap">
+		<nav id="_nav">
+			<div id="_bg">
+				<div id="logo">
+					<img src="img/7.png" alt="">
+				</div>
+				<p>
+					<a href="index1.html">Home</a>
+					<a href="about.html">About</a>
+					<a href="###" style="border:1px white solid;
+			            border-radius: 5px;">Rendering</a>
+					<a href="3D Animation.html">3D Animation</a>
+					<a href="Bim.html">Bin</a>
+					<a href="Contact.html">Contact</a>
+				</p>
+			</div>
+		</nav>
+		<!-- 引用swiper -->
+		<div class="swiper-container con">
+		  <div class="swiper-wrapper">
+		    <div class="swiper-slide"><img src="img/ashrs.jpg" alt=""></div>
+		    <div class="swiper-slide"><img src="img/dfgd.jpg" alt=""></div>
+		    <div class="swiper-slide"><img src="img/ashi.jpg" alt=""></div>
+		  </div>
+		  <div class="swiper-pagination"></div>
+		</div>
+		<!-- 瀑布流 -->
+		<div id="cont">
+			<ul></ul>
+			<ul></ul>
+			<ul></ul>
+			<ul></ul>
+		</div>
+		<div id="bg"></div>
+		<footer>
+			<div id="foot">
+				<div id="foot1">
+					<a href="###">
+						<img src="img/001.jpg" alt="">
+						<img src="img/010.jpg" alt="">
+					</a>
+				</div>
+				<div id="foot2">
+					<a href="###">
+						<img src="img/002.jpg" alt="">
+						<img src="img/020.jpg" alt="">
+					</a>
+					<a href="">
+						<img src="img/003.jpg" alt="">
+						<img src="img/030.jpg" alt="">
+					</a>
+					<a href="">
+						<img src="img/004.jpg" alt="">
+						<img src="img/040.jpg" alt="">
+					</a>
+					<a href="">
+						<img src="img/005.jpg" alt="">
+						<img src="img/050.jpg" alt="">
+					</a>
+				</div>
+				<p>Copyright@ 1998-2015 shining Group</p>
+			</div>
+		</footer>
+	</div>
+</body>
+	<script type="text/javascript"src="js/jquery-3.0.0.min.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script>
+		var mySwiper = new Swiper('.swiper-container',{
+		autoplay :3000,
+		loop :true,
+		pagination : '.swiper-pagination',
+		})
+	</script>
+	<script>
+	//创建瀑布流
+		function createLi(num){
+			for(var i=1;i<num;i++){
+				var newLi=$('<li><img src="img/rd'+i+'.jpg" alt="" /><div class="nb"><img src="img/sur.png" alt="" /></div></li>');
+				//承载高的空数组
+				var listHeight=[];
+				//为每一个ul添加高
+				$('ul').each(function(){
+					listHeight.push($(this).height());
+				})
+				//比较出高度最小的ul,及它的脚标
+				var minHeight=listHeight[0];
+				var mindex=0;
+				for(var j=0;j<listHeight.length;j++){
+					if(minHeight>listHeight[j]){
+						minHeight=listHeight[j];
+						mindex=j;
+					}
+					$('ul').eq(mindex).append(newLi);
+				}
+			}
+		}
+			createLi(28);
+			$('#cont li img').mouseover(function(){
+				$(this).siblings().show().mouseout(function(){
+					$(this).hide();
+				})
+			})
+			$('.nb').click(function(){
+				//创建:克隆图片并赋予css样式
+				var ow=$(this).siblings().clone().css({
+					position:'absolute',
+					top:25+'%',
+					left:20+'%',
+					width:40+'%',
+					height:40+'%',
+					border:'white 5px solid',
+				})
+				$('#bg').show().append(ow).click(function(){
+					$(this).hide();
+					ow.remove();
+				})
+			})
+	</script>
+	<script>
+	$('#foot a img').hover(function(){
+		$(this).toggle().siblings().toggle();
+	})
+
+	</script>
+</html>
