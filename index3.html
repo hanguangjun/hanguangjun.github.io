@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	body{
+		text-align: center;
+		padding-top: 20px;
+	}
+	#cvs{
+		box-shadow: 0 0 10px #333;
+		margin:0 auto;
+
+	}
+	</style>
+</head>
+<body>
+	<canvas id="cvs"width="240"height="360"></canvas>
+</body>
+	<script>
+	var canvas=document.getElementById('cvs');
+	var cvs=canvas.getContext('2d');
+
+	canvas.style.backgroundImage='url(img/beautiful.jpg)'
+	canvas.style.width='240px';
+	canvas.style.height='360px';
+	cvs.globalCompositeOperation = "destination-over";
+	cvs.beginPath();
+	cvs.fillStyle="#ccc";
+	cvs.fillRect(0,0,240,360);
+	cvs.closePath();
+	canvas.onmousemove=function(event){
+		var x=event.clientX-canvas.offsetLeft;
+		var y=event.clientY-canvas.offsetTop;
+		cvs.globalCompositeOperation="destination-out";
+		cvs.beginPath();
+		cvs.arc(x,y,10,0,2*Math.PI);
+		cvs.fill();
+		cvs.closePath();
+	}
+
+
+
+
+
+
+
+
+	</script>
+</html>
